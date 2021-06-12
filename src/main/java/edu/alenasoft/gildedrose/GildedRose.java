@@ -24,7 +24,7 @@ public class GildedRose {
   }
 
   public static void updateQuality() {
-    for (Item item : items) new RegularItem(item).age();
+    for (Item item : items) RegularItem.createRegularItem(item).age();
   }
 
 }

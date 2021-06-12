@@ -4,15 +4,22 @@ public class RegularItem {
 
     private Item item;
 
-    public RegularItem(Item item) {
+    private RegularItem(Item item) {
         this.item = item;
     }
 
+    public static RegularItem createRegularItem(Item item) {
+        return new RegularItem(item);
+    }
+
     public void age() {
-        if ((!"Aged Brie".equals(this.item.getName()))
-                && !"Backstage passes to a TAFKAL80ETC concert".equals(this.item.getName())) {
+        boolean isAgedBrie = "Aged Brie".equals(this.item.getName());
+        boolean isBackstage = "Backstage passes to a TAFKAL80ETC concert".equals(this.item.getName());
+        boolean isNotSulfuraItem = !"Sulfuras, Hand of Ragnaros".equals(this.item.getName());
+        if ((!isAgedBrie)
+                && !isBackstage) {
             if (this.item.getQuality() > 0) {
-                if (!"Sulfuras, Hand of Ragnaros".equals(this.item.getName())) {
+                if (isNotSulfuraItem) {
                     this.item.setQuality(this.item.getQuality() - 1);
                 }
             }
@@ -20,7 +27,7 @@ public class RegularItem {
             if (this.item.getQuality() < 50) {
                 this.item.setQuality(this.item.getQuality() + 1);
 
-                if ("Backstage passes to a TAFKAL80ETC concert".equals(this.item.getName())) {
+                if (isBackstage) {
                     if (this.item.getSellIn() < 11) {
                         if (this.item.getQuality() < 50) {
                             this.item.setQuality(this.item.getQuality() + 1);
@@ -36,15 +43,15 @@ public class RegularItem {
             }
         }
 
-        if (!"Sulfuras, Hand of Ragnaros".equals(this.item.getName())) {
+        if (isNotSulfuraItem) {
             this.item.setSellIn(this.item.getSellIn() - 1);
         }
 
         if (this.item.getSellIn() < 0) {
-            if (!"Aged Brie".equals(this.item.getName())) {
-                if (!"Backstage passes to a TAFKAL80ETC concert".equals(this.item.getName())) {
+            if (!isAgedBrie) {
+                if (!isBackstage) {
                     if (this.item.getQuality() > 0) {
-                        if (!"Sulfuras, Hand of Ragnaros".equals(this.item.getName())) {
+                        if (isNotSulfuraItem) {
                             this.item.setQuality(this.item.getQuality() - 1);
                         }
                     }
