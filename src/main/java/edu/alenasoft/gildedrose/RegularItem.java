@@ -1,20 +1,21 @@
 package edu.alenasoft.gildedrose;
 
-public class RegularItem {
+public class RegularItem implements DelegateItem {
 
-    private Item item;
+    private final Item item;
 
     protected RegularItem(Item item) {
         this.item = item;
     }
 
-    public static RegularItem createRegularItem(Item item) {
+    public static DelegateItem createRegularItem(Item item) {
         if (item.name.equals("Aged Brie")) return new AgedBrieItem(item);
         if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) return new BackstageItem(item);
         if (item.name.equals("Sulfuras, Hand of Ragnaros")) return new SulfurasItem(item);
         return new RegularItem(item);
     }
 
+    @Override
     public void age() {
         boolean isAgedBrie = "Aged Brie".equals(this.item.getName());
         boolean isBackstage = "Backstage passes to a TAFKAL80ETC concert".equals(this.item.getName());
