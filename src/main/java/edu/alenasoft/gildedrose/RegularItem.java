@@ -4,11 +4,14 @@ public class RegularItem {
 
     private Item item;
 
-    private RegularItem(Item item) {
+    protected RegularItem(Item item) {
         this.item = item;
     }
 
     public static RegularItem createRegularItem(Item item) {
+        if (item.name.equals("Aged Brie")) return new AgedBrieItem(item);
+        if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) return new BackstageItem(item);
+        if (item.name.equals("Sulfuras, Hand of Ragnaros")) return new SulfurasItem(item);
         return new RegularItem(item);
     }
 
