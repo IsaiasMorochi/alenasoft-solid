@@ -12,6 +12,7 @@ public class RegularItem implements DelegateItem {
         if (item.getName().equals("Aged Brie")) return new AgedBrieItem(item);
         if (item.getName().equals("Backstage passes to a TAFKAL80ETC concert")) return new BackstageItem(item);
         if (item.getName().equals("Sulfuras, Hand of Ragnaros")) return new SulfurasItem(item);
+        if (item.getName().equals("Conjured Mana Cake")) return new ConjuredItem(item);
         return new RegularItem(item);
     }
 

@@ -133,7 +133,7 @@ public class GildedRoseTest {
     assertEquals(expectedQuality, item.getQuality());
   }
 
-  /* Tests for the new requirement
+  /* Tests for the new requirement */
   @Test
   public void testConjuredDecrementQuality() {
     GildedRose.items = new ArrayList<>();
@@ -204,5 +204,5 @@ public class GildedRoseTest {
 
     assertEquals(expectedQuality, item.getQuality());
   }
-  */
+
 }
