@@ -2,9 +2,9 @@ package edu.alenasoft.gildedrose;
 
 public class Item {
 
-  public String name;
-  public int sellIn;
-  public int quality;
+  private String name;
+  private int sellIn;
+  private int quality;
 
   public Item(String name, int sellIn, int quality) {
     this.setName(name);
@@ -39,6 +39,6 @@ public class Item {
 
   @Override
   public String toString() {
-    return "Item{" + "name='" + name + '\'' + ", sellIn=" + sellIn + ", quality=" + quality + '}';
+    return "Item{" + "name='" + getName() + '\'' + ", sellIn=" + getSellIn() + ", quality=" + getQuality() + '}';
   }
 }
