@@ -2,14 +2,17 @@ package edu.alenasoft.gildedrose;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class GildedRose {
+
+  private static final Logger logger = Logger.getLogger(GildedRose.class.getName());
 
   public static List<Item> items = new ArrayList<>();
 
   public static void main(String[] args) {
 
-    System.out.println("OMGHAI!");
+    logger.info("OMGHAI!");
 
     items.add(new Item("+5 Dexterity Vest", 10, 20));
     items.add(new Item("Aged Brie", 2, 0));
@@ -20,7 +23,7 @@ public class GildedRose {
 
     updateQuality();
 
-    System.out.println(items);
+    logger.info(items.toString());
   }
 
   public static void updateQuality() {
