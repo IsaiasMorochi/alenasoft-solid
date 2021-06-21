@@ -1,14 +1,15 @@
 package edu.alenasoft.gildedrose;
 
-public class AgedBrieItem implements DelegateItem {
+public class AgedBrieUpdater implements QualityUpdater {
+
     private final Item item;
 
-    public AgedBrieItem(Item item) {
+    public AgedBrieUpdater(Item item) {
         this.item = item;
     }
 
     @Override
-    public void age() {
+    public void updateQuality() {
         if (this.item.getQuality() < 50) {
             this.item.setQuality(this.item.getQuality() + 1);
         }

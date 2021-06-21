@@ -1,14 +1,14 @@
 package edu.alenasoft.gildedrose;
 
-public class ConjuredItem implements DelegateItem {
+public class ConjuredUpdater implements QualityUpdater {
     private final Item item;
 
-    public ConjuredItem(Item item) {
+    public ConjuredUpdater(Item item) {
         this.item = item;
     }
 
     @Override
-    public void age() {
+    public void updateQuality() {
         if (this.item.getQuality() > 0) this.item.setQuality(this.item.getQuality() - 2);
 
         this.item.setSellIn(this.item.getSellIn() - 1);

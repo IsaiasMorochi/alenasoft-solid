@@ -1,15 +1,15 @@
 package edu.alenasoft.gildedrose;
 
-public class BackstageItem implements DelegateItem {
+public class BackstageUpdater implements QualityUpdater {
 
     private final Item item;
 
-    public BackstageItem(Item item) {
+    public BackstageUpdater(Item item) {
         this.item = item;
     }
 
     @Override
-    public void age() {
+    public void updateQuality() {
         if (this.item.getQuality() < 50) {
             this.item.setQuality(this.item.getQuality() + 1);
 
